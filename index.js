@@ -1,7 +1,6 @@
 const { Client } = require('discord.js');
 const client = new Client({ intents: [3276799]});
-
-const config = require("./config.json");
+require('dotenv').config();
 
 let quotes = new Array();
 quotes[0]= "eiouuuu babyyyyyyyyy";
@@ -25,5 +24,5 @@ client.on('messageCreate', message => {
     }
 })
 
-client.login(config.token);
+client.login(process.env.DISCORD_BOT_TOKEN);
 console.log("Bot is online!");
